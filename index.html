@@ -1,358 +1,294 @@
+```html
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Curriculum Vitae Jihan Puspita Rahayu">
-  <title>CV - Jihan Puspita Rahayu</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Jihan Puspita Rahayu</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    :root {
-      --navy: #142B4A;
-      --navy-light: #27496D;
-      --blue: #5279A5;
-      --pastel: #DCEBFA;
-      --pastel-light: #F1F7FE;
-      --text: #26364A;
-      --muted: #718198;
-      --white: #FFFFFF;
-    }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(135deg, #eee9ff, #e5f0ff);
+            color: #35304a;
+            padding: 30px 15px;
+            line-height: 1.6;
+        }
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      color: var(--text);
-      background: linear-gradient(135deg, #E8F1FC, #D4E5F8);
-      min-height: 100vh;
-      padding: 35px 16px;
-      line-height: 1.7;
-    }
+        .cv-container {
+            max-width: 850px;
+            margin: auto;
+            background-color: #ffffff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(93, 76, 145, 0.15);
+        }
 
-    .container {
-      width: 100%;
-      max-width: 900px;
-      margin: 0 auto;
-      background: var(--white);
-      border-radius: 24px;
-      overflow: hidden;
-      box-shadow: 0 12px 40px rgba(20, 43, 74, 0.15);
-    }
+        .header {
+            background: linear-gradient(135deg, #d9ccff, #cce3ff);
+            padding: 35px;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
 
-    /* HEADER NAVY */
-    .header {
-      display: flex;
-      align-items: center;
-      gap: 30px;
-      padding: 40px;
-      background: linear-gradient(120deg, #142B4A, #315A83);
-    }
+        .photo-frame {
+            width: 145px;
+            height: 180px;
+            flex-shrink: 0;
+            border: 4px solid #ffffff;
+            border-radius: 12px;
+            background-color: #f7f3ff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #76659e;
+            overflow: hidden;
+        }
 
-    /* FOTO FORMAL JIHAN
-       Letakkan file jihan.jpeg di folder yang sama
-       dengan index.html di GitHub.
-    */
-    .photo-frame {
-      flex-shrink: 0;
-      width: 155px;
-      height: 195px;
-      padding: 6px;
-      background: #FFFFFF;
-      border-radius: 16px;
-      box-shadow: 0 5px 16px rgba(0, 0, 0, 0.18);
-      overflow: hidden;
-    }
+        .photo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
 
-    .photo-frame img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
-      border-radius: 11px;
-    }
+        .photo-placeholder {
+            padding: 10px;
+            font-size: 13px;
+        }
 
-    .header-info h1 {
-      font-size: 29px;
-      line-height: 1.3;
-      color: #FFFFFF;
-      margin-bottom: 8px;
-      overflow-wrap: anywhere;
-    }
+        .header-info h1 {
+            color: #40345f;
+            font-size: 27px;
+            line-height: 1.3;
+            margin-bottom: 10px;
+        }
 
-    .subtitle {
-      color: #DCEBFA;
-      font-size: 15px;
-    }
+        .header-info p {
+            color: #5d5377;
+            font-size: 15px;
+        }
 
-    .tag {
-      display: inline-block;
-      margin-top: 14px;
-      padding: 6px 14px;
-      border-radius: 30px;
-      background: #DCEBFA;
-      color: #142B4A;
-      font-size: 13px;
-      font-weight: bold;
-    }
+        .student-label {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 6px 14px;
+            background-color: #ffffff;
+            color: #66548d;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+        }
 
-    .content {
-      padding: 32px 40px 40px;
-    }
+        .content {
+            padding: 30px 35px;
+        }
 
-    .section {
-      margin-bottom: 28px;
-    }
+        .section {
+            margin-bottom: 27px;
+        }
 
-    .section-title {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      color: #142B4A;
-      font-size: 19px;
-      margin-bottom: 14px;
-      padding-bottom: 8px;
-      border-bottom: 2px solid #DCEBFA;
-    }
+        .section h2 {
+            color: #62518e;
+            font-size: 18px;
+            margin-bottom: 13px;
+            padding-bottom: 7px;
+            border-bottom: 2px solid #e7defd;
+        }
 
-    .section-title::before {
-      content: "";
-      display: block;
-      width: 5px;
-      height: 23px;
-      border-radius: 5px;
-      background: #5279A5;
-    }
+        .info-table {
+            display: grid;
+            grid-template-columns: 145px 1fr;
+            gap: 10px 15px;
+        }
 
-    .info-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-    }
+        .info-label {
+            color: #74678f;
+            font-weight: bold;
+        }
 
-    .info-card {
-      padding: 14px 16px;
-      background: #F5F9FE;
-      border: 1px solid #DCEBFA;
-      border-radius: 12px;
-      min-width: 0;
-    }
+        .info-value {
+            overflow-wrap: anywhere;
+        }
 
-    .info-label {
-      color: #718198;
-      font-size: 12px;
-      margin-bottom: 3px;
-    }
+        .experience-card {
+            background-color: #f8f6ff;
+            border-left: 4px solid #b7a5ed;
+            border-radius: 8px;
+            padding: 13px 16px;
+            margin-bottom: 12px;
+        }
 
-    .info-value {
-      color: #142B4A;
-      font-weight: 600;
-      overflow-wrap: anywhere;
-    }
+        .experience-card h3 {
+            color: #514274;
+            font-size: 16px;
+            margin-bottom: 4px;
+        }
 
-    .description {
-      color: #52647A;
-      text-align: justify;
-    }
+        .experience-card p {
+            font-size: 14px;
+            color: #625b73;
+        }
 
-    .item {
-      padding: 15px 18px;
-      margin-bottom: 12px;
-      border-left: 4px solid #5279A5;
-      background: #F5F9FE;
-      border-radius: 0 12px 12px 0;
-    }
+        .tag-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
 
-    .item h3 {
-      font-size: 15px;
-      color: #142B4A;
-      margin-bottom: 3px;
-    }
+        .tag {
+            background-color: #eee8ff;
+            color: #5b4b85;
+            padding: 8px 14px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
 
-    .item p {
-      font-size: 14px;
-      color: #52647A;
-    }
+        .skill-list {
+            padding-left: 22px;
+        }
 
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
+        .skill-list li {
+            margin-bottom: 7px;
+        }
 
-    .skill {
-      background: #E5F0FC;
-      color: #27496D;
-      border: 1px solid #D1E3F8;
-      border-radius: 30px;
-      padding: 8px 14px;
-      font-size: 13px;
-      font-weight: 600;
-    }
+        .footer {
+            text-align: center;
+            padding: 17px;
+            background-color: #f5f1ff;
+            color: #776a91;
+            font-size: 12px;
+        }
 
-    .footer {
-      padding: 18px;
-      background: #142B4A;
-      text-align: center;
-      color: #DCEBFA;
-      font-size: 12px;
-    }
+        @media (max-width: 600px) {
+            body {
+                padding: 12px 8px;
+            }
 
-    /* TAMPILAN HP */
-    @media (max-width: 600px) {
-      body {
-        padding: 16px 10px;
-      }
+            .header {
+                padding: 25px 18px;
+                flex-direction: column;
+                text-align: center;
+            }
 
-      .container {
-        border-radius: 18px;
-      }
+            .header-info h1 {
+                font-size: 23px;
+            }
 
-      .header {
-        flex-direction: column;
-        text-align: center;
-        padding: 28px 20px;
-        gap: 18px;
-      }
+            .photo-frame {
+                width: 125px;
+                height: 160px;
+            }
 
-      .photo-frame {
-        width: 135px;
-        height: 175px;
-      }
+            .content {
+                padding: 25px 20px;
+            }
 
-      .header-info h1 {
-        font-size: 24px;
-      }
+            .info-table {
+                grid-template-columns: 1fr;
+                gap: 3px;
+            }
 
-      .content {
-        padding: 25px 20px 30px;
-      }
+            .info-value {
+                margin-bottom: 9px;
+            }
 
-      .info-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .section-title {
-        font-size: 17px;
-      }
-    }
-  </style>
+            .section h2 {
+                font-size: 17px;
+            }
+        }
+    </style>
 </head>
 
 <body>
-  <main class="container">
+    <div class="cv-container">
 
-    <header class="header">
-      <div class="photo-frame">
-        <!-- FOTO JIHAN: nama file harus jihan.jpeg -->
-        <img src="jihan formal.jpeg" alt="Foto formal Jihan Puspita Rahayu">
-      </div>
+        <header class="header">
+            <div class="photo-frame">
+                <div class="photo-placeholder">
+                    FOTO FORMAL<br><br>
+                    3 x 4<br><br>
+                    Ganti dengan foto kamu
+                </div>
+            </div>
 
-      <div class="header-info">
-        <h1>Jihan Puspita Rahayu</h1>
-        <p class="subtitle">Curriculum Vitae</p>
-        <p class="subtitle">Pelajar SMA KP Baleendah</p>
-        <span class="tag">Student Profile</span>
-      </div>
-    </header>
+            <div class="header-info">
+                <h1>Jihan Puspita Rahayu</h1>
+                <p>Pelajar SMA KP Baleendah</p>
+                <p>Pelajar yang kreatif, bertanggung jawab,
+                   dan memiliki semangat untuk terus belajar.</p>
+                <span class="student-label">CURRICULUM VITAE</span>
+            </div>
+        </header>
 
-    <div class="content">
+        <main class="content">
 
-      <section class="section">
-        <h2 class="section-title">Informasi Pribadi</h2>
+            <section class="section">
+                <h2>Informasi Pribadi</h2>
 
-        <div class="info-grid">
-          <div class="info-card">
-            <div class="info-label">Nama Lengkap</div>
-            <div class="info-value">Jihan Puspita Rahayu</div>
-          </div>
+                <div class="info-table">
+                    <div class="info-label">Nama Lengkap</div>
+                    <div class="info-value">Jihan Puspita Rahayu</div>
 
-          <div class="info-card">
-            <div class="info-label">Nama Panggilan</div>
-            <div class="info-value">Jian</div>
-          </div>
+                    <div class="info-label">Umur</div>
+                    <div class="info-value">17 tahun</div>
 
-          <div class="info-card">
-            <div class="info-label">Tempat, Tanggal Lahir</div>
-            <div class="info-value">Bandung, 28 November 2008</div>
-          </div>
+                    <div class="info-label">Tanggal Lahir</div>
+                    <div class="info-value">28 November 2008</div>
 
-          <div class="info-card">
-            <div class="info-label">Status</div>
-            <div class="info-value">Pelajar</div>
-          </div>
-        </div>
-      </section>
+                    <div class="info-label">Alamat</div>
+                    <div class="info-value">Isi alamat kamu di sini</div>
 
-      <section class="section">
-        <h2 class="section-title">Tentang Saya</h2>
-        <p class="description">
-          Saya adalah seorang pelajar yang senang mempelajari hal-hal baru
-          dan mengembangkan kemampuan diri. Saya memiliki minat dalam bidang
-          desain digital, dapat bekerja sama dalam tim, serta berusaha
-          menyelesaikan tugas dengan baik dan bertanggung jawab.
-        </p>
-      </section>
+                    <div class="info-label">Pendidikan</div>
+                    <div class="info-value">SMA KP Baleendah</div>
+                </div>
+            </section>
 
-      <section class="section">
-        <h2 class="section-title">Pendidikan</h2>
+            <section class="section">
+                <h2>Hobi</h2>
+                <div class="tag-list">
+                    <span class="tag">Mendengarkan Musik</span>
+                    <span class="tag">Memasak</span>
+                </div>
+            </section>
 
-        <div class="item">
-          <h3>SMA KP Baleendah</h3>
-          <p>Sedang menempuh pendidikan Sekolah Menengah Atas.</p>
-        </div>
-      </section>
+            <section class="section">
+                <h2>Pengalaman Organisasi</h2>
 
-      <section class="section">
-        <h2 class="section-title">Pengalaman Organisasi</h2>
+                <div class="experience-card">
+                    <h3>Sekretaris Kelas Saat SMP</h3>
+                    <p>
+                        Membantu mencatat informasi penting,
+                        mengurus administrasi kelas, dan
+                        bekerja sama dengan teman-teman.
+                    </p>
+                </div>
+            </section>
 
-        <div class="item">
-          <h3>Sekretaris Kelas — SMP</h3>
-          <p>
-            Membantu mencatat informasi kelas, mengelola keperluan
-            administrasi, dan menyampaikan informasi kepada teman-teman.
-          </p>
-        </div>
+            <section class="section">
+                <h2>Keahlian</h2>
+                <ul class="skill-list">
+                    <li>Membuat desain menggunakan Canva</li>
+                    <li>Menggunakan Microsoft Word</li>
+                    <li>Membuat presentasi</li>
+                    <li>Bekerja sama dalam kelompok</li>
+                </ul>
+            </section>
 
-        <div class="item">
-          <h3>Palang Merah Remaja (PMR)</h3>
-          <p>
-            Pernah mengikuti organisasi PMR untuk menambah pengalaman,
-            belajar bekerja sama, dan mengembangkan kepedulian terhadap sesama.
-          </p>
-        </div>
-      </section>
+        </main>
 
-      <section class="section">
-        <h2 class="section-title">Hobi</h2>
-
-        <div class="tags">
-          <span class="skill">Mendengarkan Musik</span>
-          <span class="skill">Memasak</span>
-        </div>
-      </section>
-
-      <section class="section">
-        <h2 class="section-title">Keahlian</h2>
-
-        <div class="tags">
-          <span class="skill">Kerja Sama Tim</span>
-          <span class="skill">Desain Canva</span>
-          <span class="skill">Mengetik</span>
-          <span class="skill">Mengerjakan Tugas</span>
-        </div>
-      </section>
+        <footer class="footer">
+            © 2026 Jihan Puspita Rahayu | Curriculum Vitae
+        </footer>
 
     </div>
-
-    <footer class="footer">
-      Curriculum Vitae · Jihan Puspita Rahayu
-    </footer>
-
-  </main>
 </body>
 </html>
+```
